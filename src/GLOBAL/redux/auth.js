@@ -92,7 +92,7 @@ export const verifyMSISDN = async (isPhoneNumber, mobileNumber, email, navigate)
   }
 
   // msisdn verification passed
-  window.location.href = '/#/home'
+  window.location.href = '/home'
 }
 
 
@@ -199,7 +199,7 @@ const LoginUnicast = async () => {
 
 
       await sendLog({ action: 'login' })
-      window.location.href = '/#/home'
+      window.location.href = '/home'
     }
   }
 

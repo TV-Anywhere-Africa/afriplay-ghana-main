@@ -27,8 +27,19 @@ const Movies = () => {
                 <GenreTabs />
                 <GenreMovies />
                 <Reel title='TRENDING' />
-                <Reel title='RECENTLY ADDED' />
+                <Reel title='AFRIPREMIERE' />
                 <Reel title='COMING SOON' />
+                <Reel title='AFRIPLAY LIVE' />
+                <Reel title='MOVING STORIES' />
+                <Reel title='TOP SEARCHES' />
+                <Reel title='BEST OF EPICS' />
+                <Reel title='MOST WATCHED' />
+                <Reel title='TWISTED DRAMA' />
+                <Reel title='ROMCOMS' />
+                <Reel title='HIDDEN GEMS' />
+                <Reel title='ACTION & ADVENTURES' />
+                <Reel title='FAMILY & KIDS' />
+                <Reel title='FEEL GOOD MOVIES' />
                 <Footer />
 
                 {/* <Reel title='PAY PER VIEW' /> */}

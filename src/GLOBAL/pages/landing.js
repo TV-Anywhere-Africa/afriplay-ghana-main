@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 // COMPONENTS
 import Banner from "../components/landing/Banner";
-import Family from "../components/landing/Family";
 import Faq from "../components/landing/Faq";
 import Footer from "../components/Footer";
 import Header from "../components/Header";

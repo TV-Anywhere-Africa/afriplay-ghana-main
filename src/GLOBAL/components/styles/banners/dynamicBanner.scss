@@ -279,4 +279,10 @@
     .hero-slider-container {
         display: none;
     }
+
+    .hero,
+    html .hero .hero-gradient,
+    .hero-player-container {
+        height: 70vh;
+    }
 }

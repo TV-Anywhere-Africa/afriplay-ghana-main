@@ -55,6 +55,8 @@
     transition: all 0.2s ease;
     color: $tertiary_color;
     font-size: $normal_font;
+    line-height: 30px;
+    letter-spacing: 0.2px;
   }
 
   .faqs .faq.open .faq-question {

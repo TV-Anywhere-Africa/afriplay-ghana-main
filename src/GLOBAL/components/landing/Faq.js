@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import Round from "../../../assets/round.png";
 import "../styles/Faq.scss";
 
 const Faq = () => {
@@ -53,8 +52,7 @@ const Faq = () => {
       <div className="container">
         <div className="inside-faq">
           <h1>
-
-            <img src={Round} alt="circle" /> Frequently asked questions
+            Frequently asked questions
           </h1>
           <div className="faqs">
             {faqs.map((faq, index) => (

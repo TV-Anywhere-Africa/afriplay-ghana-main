@@ -23,7 +23,7 @@ const AfriplayLiveBanner = () => {
             <div className="hero">
                 <div className="hero-container">
                     <div className="hero-content-wrapper">
-                        <div className="hero-content">
+                        {bannerContent ? <div className="hero-content">
                             <div className="live-date-wrapper">
                                 <div className="live-label">LIVE</div>
                                 <p>OCTOBER 31</p>
@@ -32,7 +32,7 @@ const AfriplayLiveBanner = () => {
                             <h1>{bannerContent.title}</h1>
                             <p className="hero-content-description">{bannerContent.description}</p>
                             <div className="pay-per-view-btn">Live on Pay-Per-View</div>
-                        </div>
+                        </div> : <></>}
                     </div>
 
                     <div className='hero-slider-container'>
@@ -49,7 +49,7 @@ const AfriplayLiveBanner = () => {
                     </div>
                 </div>
                 {
-                    bannerContent.preview_image_id ?
+                    bannerContent ?
                         <div className='hero-player-container'>
                             <img src={`https://ott.tvanywhereafrica.com:28182/api/client/v1/global/images/${bannerContent.preview_image_id}?accessKey=WkVjNWNscFhORDBLCg==`} alt={bannerContent.title} className='dynamic-landing-banner' />
                         </div>

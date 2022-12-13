@@ -388,6 +388,19 @@ export const fetchMovie = async (dispatch) => {
           }
         )
 
+        const movingstories = movies.data.data.filter((item) => {
+          return item.id === _packageNameToId["moving_stories"];
+        });
+
+
+        const bestofepics = movies.data.data.filter((item) => {
+          return item.id === _packageNameToId["bestofepics"];
+        });
+
+        const topsearches = movies.data.data.filter((item) => {
+          return item.id === _packageNameToId["top_searches"];
+        });
+
         const recentlyadded = movies.data.data.filter((item) => {
           return item.id === _packageNameToId["recentlyadded"];
         });
@@ -416,6 +429,30 @@ export const fetchMovie = async (dispatch) => {
           return item.id === _packageNameToId["AfriPremiere"];
         })
 
+        const twisteddrama = movies.data.data.filter((item) => {
+          return item.id === _packageNameToId["twisted_drama"];
+        })
+
+        const romcoms = movies.data.data.filter((item) => {
+          return item.id === _packageNameToId["romcoms"];
+        })
+
+        const hiddengems = movies.data.data.filter((item) => {
+          return item.id === _packageNameToId["hidden_gems"];
+        })
+
+        const actionandadventures = movies.data.data.filter((item) => {
+          return item.id === _packageNameToId["action_and_adventures"];
+        })
+
+        const familyandkids = movies.data.data.filter((item) => {
+          return item.id === _packageNameToId["family_and_kids"];
+        })
+
+        const feelgoodmovies = movies.data.data.filter((item) => {
+          return item.id === _packageNameToId["feel_good_movies"];
+        })
+
         dispatch(
           fetchMovies_success({
             movies: movies.data.data,
@@ -428,6 +465,16 @@ export const fetchMovie = async (dispatch) => {
             afriplaytop10: afriplaytop10 || [],
             afriPlaylive: afriPlaylive || [],
             afriPremiere: afriPremiere || [],
+            bestofepics: bestofepics || [],
+            topsearches: topsearches || [],
+            movingstories: movingstories || [],
+
+            twisteddrama: twisteddrama || [],
+            romcoms: romcoms || [],
+            hiddengems: hiddengems || [],
+            actionandadventures: actionandadventures || [],
+            familyandkids: familyandkids || [],
+            feelgoodmovies: feelgoodmovies || [],
           })
         );
       }

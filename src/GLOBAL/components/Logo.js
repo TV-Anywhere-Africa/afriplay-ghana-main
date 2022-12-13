@@ -1,5 +1,5 @@
 import '../../GLOBAL/components/styles/LogoSection.scss'
-import { logoTextSrc } from "../../utils/assets"
+import logo from "../../assets/svg/logo.png"
 
 const Logo = (props) => {
     const { w, h } = props
@@ -7,7 +7,7 @@ const Logo = (props) => {
         <>
             <section className='logo-wrapper'>
                 <img
-                    src={logoTextSrc}
+                    src={logo}
                     alt="afriplay-logo"
                     style={{ width: w, height: h }}
                 />

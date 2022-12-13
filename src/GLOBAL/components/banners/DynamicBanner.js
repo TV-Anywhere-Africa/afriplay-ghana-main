@@ -11,8 +11,10 @@ import SliderItem from './SliderItem'
 import getRandomIndexes from '../../../utils/getRandomIndexes'
 import getGenreName from "../../../utils/getGenreName"
 import isInViewport from "../../../utils/isInViewport"
-import '../../components/styles/banners/dynamicBanner.scss'
 import BannerBackground from "./BannerBackground"
+import speaker from "../../../assets/svg/speaker.svg"
+import muted from "../../../assets/svg/muted.svg"
+import '../../components/styles/banners/dynamicBanner.scss'
 
 /* **
  * display a recently added series in banner.picks a series from the recently added category
@@ -57,9 +59,9 @@ const DynamicBanner = ({ showSlides = true }) => {
     const [isMuted, setIsMuted] = useState(true)
     const [showTitle, setShowTitle] = useState(true)
 
-    setTimeout(() => {
-        setShowTitle(false)
-    }, 5000);
+    // setTimeout(() => {
+    //     setShowTitle(false)
+    // }, 5000);
 
     useEffect(() => {
         const initGetAllSlides = async () => {
@@ -167,8 +169,8 @@ const DynamicBanner = ({ showSlides = true }) => {
                                                 <div className="mute-icon">
                                                     {
                                                         isMuted
-                                                            ? <img onClick={() => { setIsMuted(!isMuted) }} src="/assets/svg/speaker.svg" alt="speacker icon" />
-                                                            : <img onClick={() => { setIsMuted(!isMuted) }} src="/assets/svg/muted.svg" alt="mute icon" />
+                                                            ? <img onClick={() => { setIsMuted(!isMuted) }} src={speaker} alt="speaker icon" />
+                                                            : <img onClick={() => { setIsMuted(!isMuted) }} src={muted} alt="mute icon" />
                                                     }
                                                 </div>
                                             </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { logoTextSrc } from "../../utils/assets";
+import logo from "../../assets/svg/logo.png"
 import "./styles/Footer.scss";
 
 const Footer = () => {
@@ -11,19 +11,19 @@ const Footer = () => {
           <div className="left">
             <div className="logo">
               <img
-                src={logoTextSrc}
+                src={logo}
                 alt="afriplay-logo"
               />
             </div>
           </div>
           <div className="links">
-            <ul className="col">
+            {/* <ul className="col">
               <b>AFRIPLAY</b>
               <ul>
                 <li><Link to='/afripremiere'>AFRIPREMIERE</Link></li>
                 <li><Link to='/afriplaylive'>AFRILIVE</Link></li>
               </ul>
-            </ul>
+            </ul> */}
             <ul className="col">
               <b>WATCH</b>
               <ul>

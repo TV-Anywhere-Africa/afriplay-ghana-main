@@ -26,9 +26,9 @@ const Series = () => {
                 <DynamicBanner />
                 <GenreTabs />
                 <GenreMovies />
-                <Reel title='TRENDING' />
+                {/* <Reel title='TRENDING' />
                 <Reel title='RECENTLY ADDED' />
-                <Reel title='COMING SOON' />
+                <Reel title='COMING SOON' /> */}
                 <Footer />
 
                 {/* <Reel title='PAY PER VIEW' /> */}

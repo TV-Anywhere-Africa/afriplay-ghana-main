@@ -61,7 +61,7 @@ html .livetv-movie-card {
             background: #2b0e42;
             height: 150px;
             margin-bottom: 10px;
-            object-fit: cover;
+            object-fit: contain;
         }
     }
 }

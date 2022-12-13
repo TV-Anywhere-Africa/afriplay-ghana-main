@@ -18,7 +18,7 @@ const MovieDetailsBanner = () => {
   const [watchlisted, setWatchlisted] = useState(true)
   const { movieDetails, loading, watchlist } = useSelector((state) => state.fetchMovies);
 
-  // console.warn('movieDetails', movieDetails)
+  console.warn('movieDetails', movieDetails)
 
   const toggleAddToWatchlist = (_action) => {
     setWatchlisted(!watchlisted)
@@ -88,9 +88,9 @@ const MovieDetailsBanner = () => {
                 <div onClick={() => toggleAddToWatchlist('remove')} className="others">
                   REMOVE FROM WATCHLIST
                 </div>}
-              <Link to="" className="others">
+              {/* <Link to="" className="others">
                 TRAILER
-              </Link>
+              </Link> */}
               <div onClick={() => shareMovie(movieDetails)} className="others">
                 SHARE
               </div>

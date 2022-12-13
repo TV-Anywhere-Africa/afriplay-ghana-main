@@ -5,8 +5,15 @@ import Watchlist from "../components/profileTabs/Watchlist";
 import { fetchUserDevices, getProfile, updateProfile } from "../redux/account";
 import "../components/styles/profile.scss"
 import Devices from "../components/profileTabs/Devices";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { TOAST } from "../../utils/constants";
+
+import watchlistIcon from "../../assets/profile/watchlist.svg"
+import paymentIcon from "../../assets/profile/payment.svg"
+import settingsIcon from "../../assets/profile/settings.svg"
+import supportIcon from "../../assets/profile/support.svg"
+import devicesIcon from "../../assets/profile/devices.svg"
+import profilesIcon from "../../assets/profile/profiles.svg"
 
 const Profile = () => {
     const [activeTab, setActiveTab] = useState("watchlist");
@@ -24,27 +31,19 @@ const Profile = () => {
                         <br />
                         <ul>
                             <li className={activeTab === "watchlist" ? "active-tab tab" : "tab"} onClick={() => setActiveTabName("watchlist")}>
-                                <img src='/assets/profile/watchlist.svg' alt='watchlist_image' />
+                                <img src={watchlistIcon} alt='watchlist_image' />
                                 <p>Watchlist</p>
                             </li>
-                            {/* <li className={activeTab === "settings" ? "active-tab tab" : "tab"} onClick={() => setActiveTabName("settings")}>
-                                <img src='/assets/profile/settings.svg' alt='settings_image' />
-                                <p>Settings</p>
-                            </li> */}
                             <li className={activeTab === "devices" ? "active-tab tab" : "tab"} onClick={() => setActiveTabName("devices")}>
-                                <img src='/assets/profile/devices.svg' alt='devices_image' />
+                                <img src={devicesIcon} alt='devices_image' />
                                 <p>Devices</p>
                             </li>
-                            {/* <li className={activeTab === "payment" ? "active-tab tab" : "tab"} onClick={() => setActiveTabName("payment")}>
-                                <img src='/assets/profile/payment.svg' alt='payment_image' />
-                                <p>Payment</p>
-                            </li> */}
                             <li className={activeTab === "profiles" ? "active-tab tab" : "tab"} onClick={() => setActiveTabName("profiles")}>
-                                <img src='/assets/profile/profiles.svg' alt='devices_image' />
+                                <img src={profilesIcon} alt='devices_image' />
                                 <p>Profiles</p>
                             </li>
                             <li className={activeTab === "support" ? "active-tab tab" : "tab"} onClick={() => setActiveTabName("support")}>
-                                <img src='/assets/profile/support.svg' alt='support_image' />
+                                <img src={supportIcon} alt='support_image' />
                                 <p>Support</p>
                             </li>
                         </ul>
@@ -143,7 +142,9 @@ const ProfileCard = ({ active }) => {
 
 const Support = ({ active }) => {
     if (active === 'support') return (
-        <>Support</>
+        <div>
+            Need support? Send us an email at <a href="mailto:support@afriplay.tv">support@afriplay.tv</a>
+        </div>
     )
     return <></>
 }

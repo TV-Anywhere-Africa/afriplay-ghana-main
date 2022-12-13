@@ -1,4 +1,5 @@
 import React from "react";
+import dataFriendly from "../../../assets/device-mockup.png"
 import "../styles/Family.scss";
 
 const DataFriendly = () => {
@@ -11,7 +12,7 @@ const DataFriendly = () => {
                         <p>Save your data. Enjoy for longer. Watch at your preferred streaming quality.</p>
                     </div>
                     <div className="picture">
-                        <img src='/assets/device-mockup.png' alt="family-afriplay" />
+                        <img src={dataFriendly} alt="family-afriplay" />
                     </div>
                 </div>
             </div>

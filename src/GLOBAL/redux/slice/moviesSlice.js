@@ -51,6 +51,15 @@ const fetchMovieSlice = createSlice({
     afriPlaylive: [],
     afriPremiere: [],
     ageRatings: [],
+    bestofepics: [],
+    topsearches: [],
+    movingstories: [],
+    twisteddrama: [],
+    romcoms: [],
+    hiddengems: [],
+    actionandadventures: [],
+    familyandkids: [],
+    feelgoodmovies: [],
 
 
     genres: [],
@@ -128,6 +137,16 @@ const fetchMovieSlice = createSlice({
       state.recentlyadded = action.payload.recentlyadded.length > 0 ? action.payload.recentlyadded[0]["content"] : []
       state.afriPlaylive = action.payload.afriPlaylive.length > 0 ? action.payload.afriPlaylive[0]["content"] : []
       state.afriPremiere = action.payload.afriPremiere.length > 0 ? action.payload.afriPremiere[0]["content"] : []
+      state.bestofepics = action.payload.bestofepics.length > 0 ? action.payload.bestofepics[0]["content"] : []
+      state.topsearches = action.payload.topsearches.length > 0 ? action.payload.topsearches[0]["content"] : []
+      state.movingstories = action.payload.movingstories.length > 0 ? action.payload.movingstories[0]["content"] : []
+
+      state.twisteddrama = action.payload.twisteddrama.length > 0 ? action.payload.twisteddrama[0]["content"] : []
+      state.romcoms = action.payload.romcoms.length > 0 ? action.payload.romcoms[0]["content"] : []
+      state.hiddengems = action.payload.hiddengems.length > 0 ? action.payload.hiddengems[0]["content"] : []
+      state.actionandadventures = action.payload.actionandadventures.length > 0 ? action.payload.actionandadventures[0]["content"] : []
+      state.familyandkids = action.payload.familyandkids.length > 0 ? action.payload.familyandkids[0]["content"] : []
+      state.feelgoodmovies = action.payload.feelgoodmovies.length > 0 ? action.payload.feelgoodmovies[0]["content"] : []
 
       state.nameToId = action.payload.packageNameToId
       state.moviesByCategories = action.payload.moviesByCategories

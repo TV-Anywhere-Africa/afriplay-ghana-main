@@ -12,6 +12,8 @@ const MovieCard = ({ movie, type }) => {
     const [EPGInfo, setEPGInfo] = useState({ start: '00:00', end: '00:00', title: '' })
     const [imgSrc, setImgSrc] = useState("")
 
+    console.log("movie", movie)
+
     // const compressImages = async () => {
     //     const allImages = window.document.getElementsByTagName('img')
 

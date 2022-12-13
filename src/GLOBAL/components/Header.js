@@ -1,16 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
-import { logoTextSrc } from "../../utils/assets";
 import { getProfile, logout } from "../redux/account";
 import { setProfile } from "../redux/slice/accountSlice";
 import { toggleDrawer } from "../redux/slice/drawerSlice";
 import { search } from "../redux/fetchMoviesApi";
 import Button from "./buttons/Button";
 import Drawer from "./Drawer";
-import "./styles/Header.scss";
 import { errorLog } from "../logger"
 import { COOKIES } from "../../utils/constants";
+import logo from "../../assets/svg/logo.png"
+import padlock from "../../assets/svg/padlock.svg"
+import caretDown from "../../assets/svg/caret-down.svg"
+import searchIcon from "../../assets/svg/search.svg"
+import profileIcon from "../../assets/profile.png"
+import "./styles/Header.scss";
 
 const user_info = COOKIES.get("user_info");
 
@@ -60,8 +64,8 @@ const Header = (prop) => {
                   <Link to="/movies"> <p className={location.pathname === '/movies' ? 'active-link' : ''}>MOVIES</p> </Link>
                   <Link to="/series"> <p className={location.pathname === '/series' ? 'active-link' : ''}>SERIES</p> </Link>
                   <Link to="/livetv"> <p className={location.pathname === '/livetv' ? 'active-link' : ''}>LIVE TV</p> </Link>
-                  <Link to="/afripremiere"> <p className={location.pathname === '/afripremiere' ? 'active-link' : ''}>AFRIPREMIERE</p> </Link>
-                  <Link to="/afriplaylive"> <p className={location.pathname === '/afriplaylive' ? 'active-link' : ''}>AFRILIVE</p> </Link>
+                  {/* <Link to="/afripremiere"> <p className={location.pathname === '/afripremiere' ? 'active-link' : ''}>AFRIPREMIERE</p> </Link>
+                  <Link to="/afriplaylive"> <p className={location.pathname === '/afriplaylive' ? 'active-link' : ''}>AFRILIVE</p> </Link> */}
                 </nav>
               )}
             </div>
@@ -75,7 +79,7 @@ const Header = (prop) => {
                       setSearchQuery(e.target.value)
                       search(dispatch, text)
                     }} autoFocus type='text' placeholder="Search" /> : <></>}
-                    <img src='/assets/svg/search.svg' className="search-icon" style={showSearch ? { display: 'none' } : null} alt='search' />
+                    <img src={searchIcon} className="search icon" style={showSearch ? { display: 'none' } : null} alt='search' />
                   </Link>
                 </div> : <></>}
               </div>
@@ -85,7 +89,7 @@ const Header = (prop) => {
                   <>
                     <Link to="/signup" className="sign-up">
                       <div>
-                        <img src='/assets/svg/padlock.svg' alt='padlock' />
+                        <img src={padlock} alt='padlock' />
                         <p>SIGN IN</p>
                       </div>
                     </Link>
@@ -93,10 +97,10 @@ const Header = (prop) => {
                   </>
                 ) : (
                   <div className="profile-wrapper" onClick={() => setShowAccountDropdown(!showAccountDropdown)}>
-                    <img src='/assets/profile.png' className="profile-icon" alt='profile icon' />
+                    <img src={profileIcon} className="profile-icon" alt='profile icon' />
                     {/* <p>{localStorage.getItem('afri_email') ? localStorage.getItem('afri_email') : localStorage.getItem('afri_username')}</p> */}
                     <p>{profile.first_name}</p>
-                    <img src='/assets/svg/caret-down.svg' alt='chevron icon' />
+                    <img src={caretDown} alt='caret down icon' />
                   </div>
                 )}
               </div>
@@ -143,7 +147,7 @@ const Logo = () => {
     <div className="logo">
       <Link to={homeLink}>
         <img
-          src={logoTextSrc}
+          src={logo}
           alt="afriplay-logo"
         />
       </Link>
