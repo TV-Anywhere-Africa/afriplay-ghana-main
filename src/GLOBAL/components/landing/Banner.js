@@ -58,7 +58,8 @@ const Banner = () => {
       <wc-toast></wc-toast>
       <div className="landing-player">
         <ReactPlayer
-          url="https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
+          // url="https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
+          url="https://glonigeria.tvanywhereafrica.com:28182/auth-streaming/2,9d152f7a4aa2b4ff6d23e14d5c55b4cf3bdebfd2,1670946840,afpgh0550202871,0-asit_demo_la_mama_del_10_doblado_ingles_upd-hls-NONE,8,8,8,8,8,8,DESKTOP,141499,all,none,afriplayghana,172.20.1.31/hls/vod/0-asit_demo_la_mama_del_10_doblado_ingles_upd-hls-NONE/playlist.m3u8"
           width="100%"
           height="100%"
           muted={true}

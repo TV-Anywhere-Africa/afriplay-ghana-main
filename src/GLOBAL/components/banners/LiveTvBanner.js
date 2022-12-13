@@ -23,19 +23,23 @@ const LiveTVBanner = () => {
         <section>
             <div className="hero">
                 <div className="hero-container">
-                    <div className="hero-content-wrapper">
-                        <div className="hero-content">
-                            <p className="primary-text">{bannerContent.type}</p>
-                            <h1>{bannerContent.title}</h1>
-                            <p className="hero-content-description">{bannerContent.description}</p>
-                            <br />
-                            <Button page={`/watch/live/${bannerContent.content_id}`} label='WATCH LIVE' />
-                        </div>
-                    </div>
+                    {
+                        bannerContent
+                            ? <div className="hero-content-wrapper">
+                                <div className="hero-content">
+                                    <p className="primary-text">{bannerContent.type}</p>
+                                    <h1>{bannerContent.title}</h1>
+                                    <p className="hero-content-description">{bannerContent.description}</p>
+                                    <br />
+                                    <Button page={`/watch/live/${bannerContent.content_id}`} label='WATCH LIVE' />
+                                </div>
+                            </div>
+                            : <></>
+                    }
 
-                    <div className='hero-slider-container'>
-                        <Slider {...dynamicBannerSliderSettings} className='hero-slider-main'>
-                            {/* {afriPlaylive.map((movie) => {
+                    {/* <div className='hero-slider-container'>
+                        <Slider {...dynamicBannerSliderSettings} className='hero-slider-main'> */}
+                    {/* {afriPlaylive.map((movie) => {
                                 return <SliderItem
                                     onClicked={() => null}
                                     title={movie.title}
@@ -43,11 +47,11 @@ const LiveTVBanner = () => {
                                     isSelected={false}
                                     key={movie.id} />
                             })} */}
-                        </Slider>
-                    </div>
+                    {/* </Slider>
+                    </div> */}
                 </div>
                 {
-                    bannerContent.preview_image_id ?
+                    bannerContent && bannerContent.preview_image_id ?
                         <div className='hero-player-container'>
                             <img src={`https://ott.tvanywhereafrica.com:28182/api/client/v1/global/images/${bannerContent.preview_image_id}?accessKey=WkVjNWNscFhORDBLCg==`} alt={bannerContent.title} className='dynamic-landing-banner' />
                         </div>

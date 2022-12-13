@@ -66,7 +66,7 @@ const AfriPremiereBanner = () => {
         }
 
         initReturnMovieDetails()
-    }, [ageRatings, bannerContent.content_id])
+    }, [ageRatings, bannerContent])
 
     useEffect(() => {
         const initSetAge = () => {
@@ -137,7 +137,9 @@ const AfriPremiereBanner = () => {
                     </div>
                 </div>
 
-                <BannerBackground muted={isMuted} bannerImg={bannerContent.preview_image_id} _trailer={trailer} _onPlayTrailer={isPlayingTrailer} _bannerContent={bannerContent} />
+                {bannerContent
+                    ? <BannerBackground muted={isMuted} bannerImg={bannerContent.preview_image_id} _trailer={trailer} _onPlayTrailer={isPlayingTrailer} _bannerContent={bannerContent} />
+                    : <></>}
 
                 {/* {showTitle ? <div className="hero-gradient afripremiere-hero-gradient" /> : <></>} */}
 

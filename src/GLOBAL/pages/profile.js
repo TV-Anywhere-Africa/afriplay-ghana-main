@@ -5,6 +5,8 @@ import Watchlist from "../components/profileTabs/Watchlist";
 import { fetchUserDevices, getProfile, updateProfile } from "../redux/account";
 import "../components/styles/profile.scss"
 import Devices from "../components/profileTabs/Devices";
+import { useNavigate } from "react-router-dom";
+import { TOAST } from "../../utils/constants";
 
 const Profile = () => {
     const [activeTab, setActiveTab] = useState("watchlist");
@@ -12,6 +14,7 @@ const Profile = () => {
 
     return (
         <>
+            <wc-toast></wc-toast>
             <div className="body">
                 <Header links={5} />
                 <main className="account-main">
@@ -93,6 +96,7 @@ const Payment = ({ active }) => {
 }
 
 const ProfileCard = ({ active }) => {
+    const navigate = useNavigate()
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [profileInfo, setProfileInfo] = useState({
@@ -113,21 +117,25 @@ const ProfileCard = ({ active }) => {
     if (active === 'profiles') return (
         <div className="profile">
             <div className="profile-image" />
-            <div className="flex">
+            {/* <div className="flex">
                 <b>My profile</b>
                 <small>
                     Last Login 01, Oct 2022. 04:00AM
                     <br />
                     Mac OS, Lagos, NG
                 </small>
-            </div>
+            </div> */}
             <br />
             <div className="flex">
                 <input value={firstName} onChange={e => setFirstName(e.target.value)} placeholder="First name" />
                 <input value={lastName} onChange={e => setLastName(e.target.value)} placeholder="Last name" />
             </div>
             <br />
-            <button onClick={() => updateProfile(firstName, lastName)} className="save-btn">Save</button>
+            <button onClick={() => {
+                updateProfile(firstName, lastName)
+                TOAST.success("Profile updated!")
+                // navigate('/home')
+            }} className="save-btn">Save</button>
         </div>
     )
     return <></>

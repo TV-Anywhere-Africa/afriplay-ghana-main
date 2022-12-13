@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Landing from "./GLOBAL/pages/landing";
 import SignUpPage from "./GLOBAL/pages/signUpPage";
 import OTPVerification from "./GLOBAL/pages/otpVerification";
@@ -22,7 +22,7 @@ import "./_global.scss";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route index element={<Landing />} />
         <Route path="/otp-verification" element={<OTPVerification />} />
@@ -43,7 +43,7 @@ function App() {
         <Route path="/watch/:type/:id" element={<ProtectedRoute><Watch /></ProtectedRoute>} />
         <Route path="*" element={<ErrorPage text='Page not found!' />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
