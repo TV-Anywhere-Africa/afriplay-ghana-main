@@ -21,7 +21,7 @@ const Devices = () => {
             <h1>All Your Devices</h1>
             <p>Stream movies, series, live Channels entertainment, across all your devices from one subscription. From GHC5.</p>
             <div className="store-icons">
-              <img style={{ width: "180px" }} src={playStore} alt='android-store' />
+              <img src={playStore} alt='android-store' />
               <img src={appStore} alt='apple-store' />
             </div>
           </div>

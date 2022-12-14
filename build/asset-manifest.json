@@ -1,10 +1,11 @@
 {
   "files": {
     "main.css": "/static/css/main.ba4dc5ee.css",
-    "main.js": "/static/js/main.e37044f3.js",
+    "main.js": "/static/js/main.4bfaa2f5.js",
     "static/media/device-mockup.png": "/static/media/device-mockup.e6a8de1961a3f927d1d8.png",
     "service-worker.js": "/service-worker.js",
     "static/media/logo.png": "/static/media/logo.f7ca3189f8776e30cb18.png",
+    "static/media/android-store.png": "/static/media/android-store.31a12dd98d46e79c3a57.png",
     "static/media/settings.svg": "/static/media/settings.955b3bc4675c0ac8cc21a584a2273456.svg",
     "static/media/profiles.svg": "/static/media/profiles.7e54192282a1dfa602e0d05afba39b22.svg",
     "static/media/support.svg": "/static/media/support.6bda2c582b95b6a677cd02ce51fadf94.svg",
@@ -19,10 +20,10 @@
     "static/media/padlock.svg": "/static/media/padlock.0878975a063a0f209e5b77cade2611dc.svg",
     "static/media/chevron-right.svg": "/static/media/chevron-right.0fd5c268cd26f1a6e00df1a0d549fa1d.svg",
     "main.ba4dc5ee.css.map": "/static/css/main.ba4dc5ee.css.map",
-    "main.e37044f3.js.map": "/static/js/main.e37044f3.js.map"
+    "main.4bfaa2f5.js.map": "/static/js/main.4bfaa2f5.js.map"
   },
   "entrypoints": [
     "static/css/main.ba4dc5ee.css",
-    "static/js/main.e37044f3.js"
+    "static/js/main.4bfaa2f5.js"
   ]
 }

@@ -29,8 +29,8 @@ const Drawer = () => {
                     <li><Link to='/movies'>Movies</Link></li>
                     <li><Link to='/series'>Series</Link></li>
                     <li><Link to='/livetv'>Live TV</Link></li>
-                    <li><Link to='/afripremiere'>AfriPremiere</Link></li>
-                    <li><Link to='/afriplaylive'>Afrilive</Link></li>
+                    {/* <li><Link to='/afripremiere'>AfriPremiere</Link></li>
+                    <li><Link to='/afriplaylive'>Afrilive</Link></li> */}
                     <li><Link to='/profile'>Profile</Link></li>
                     <button onClick={logout} className='btn-filled'>Logout</button>
                 </ul> : <></>}

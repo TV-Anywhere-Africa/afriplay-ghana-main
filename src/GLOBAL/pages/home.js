@@ -27,9 +27,9 @@ const Home = () => {
                 {/* <Reel title='MOST WATCHED' /> */}
                 {/* <Reel title='RECENTLY ADDED' /> */}
                 <Reel title='TRENDING' />
-                <Reel title='AFRIPREMIERE' />
+                {/* <Reel title='AFRIPREMIERE' /> */}
                 <Reel title='COMING SOON' />
-                <Reel title='AFRIPLAY LIVE' />
+                {/* <Reel title='AFRIPLAY LIVE' /> */}
                 <Reel title='MOVING STORIES' />
                 <Reel title='TOP SEARCHES' />
                 <Reel title='BEST OF EPICS' />
