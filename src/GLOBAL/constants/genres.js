@@ -3,5 +3,5 @@ export const genreTabs = [
     'DRAMA',
     'ACTION',
     'COMEDY',
-    'FAMILY',
+    // 'FAMILY',
 ]

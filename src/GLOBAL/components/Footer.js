@@ -32,8 +32,7 @@ const Footer = () => {
                 <li><Link to='/livetv'>LIVE TV</Link></li>
               </ul>
             </ul>
-            <ul className="col">
-              {/* <b>WATCH</b> */}
+            {/* <ul className="col">
               <ul>
                 <li><Link to='/movies'>ABOUT</Link></li>
                 <li><Link to='/series'>COMMUNITY</Link></li>
@@ -42,7 +41,7 @@ const Footer = () => {
                 <li><Link to='/livetv'>TERMS</Link></li>
                 <li><Link to='/livetv'>FAQs</Link></li>
               </ul>
-            </ul>
+            </ul> */}
           </div>
         </div>
         <div className="date-footer">

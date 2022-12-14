@@ -24,7 +24,7 @@ const Series = () => {
             <main style={{ background: ' #1a052b' }}>
                 <Header links={5} signup={1} />
                 <DynamicBanner />
-                <GenreTabs />
+                {/* <GenreTabs /> */}
                 <GenreMovies />
                 {/* <Reel title='TRENDING' />
                 <Reel title='RECENTLY ADDED' />

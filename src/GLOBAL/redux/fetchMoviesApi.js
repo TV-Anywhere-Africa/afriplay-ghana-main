@@ -40,7 +40,7 @@ export const fetchOneSeries = async (seriesId, dispatch) => {
   try {
     const { access_token, operator_uid } = user_info.data.data
 
-    interceptResponse()
+    // interceptResponse()
 
     let req = await axios.get(
       `https://ott.tvanywhereafrica.com:28182/api/client/v1/${operator_uid}/series/${seriesId}`,
@@ -62,7 +62,7 @@ export const fetchSimilarMovies = async (type, movieId, dispatch) => {
   try {
     const { access_token, operator_uid } = user_info.data.data
 
-    interceptResponse()
+    // interceptResponse()
 
     let req = await axios.get(
       `https://ott.tvanywhereafrica.com:28182/api/client/v1/${operator_uid}/vod/${type}/${movieId}/related`,
@@ -87,7 +87,7 @@ export const fetchMovieByGenre = async (activeGenre, dispatch) => {
     const _categoriesArray = []
     const activeGenreId = getGenreId(activeGenre);
 
-    interceptResponse()
+    // interceptResponse()
 
     const packages = await axios.get(
       `https://ott.tvanywhereafrica.com:28182/api/client/v1/${operator_uid}/users/${user_id}/packages?device_class=desktop`,
@@ -197,7 +197,7 @@ export const fetchTrailer = async (id) => {
 
     const { access_token, operator_uid, user_id } = user_info.data.data;
 
-    interceptResponse()
+    // interceptResponse()
 
     let url
 
@@ -323,7 +323,7 @@ export const fetchMovie = async (dispatch) => {
   try {
     const { access_token, operator_uid, user_id } = user_info.data.data;
 
-    interceptResponse()
+    // interceptResponse()
 
     const packages = await axios.get(
       `https://ott.tvanywhereafrica.com:28182/api/client/v1/${operator_uid}/users/${user_id}/packages?device_class=desktop`,
@@ -684,7 +684,7 @@ export const fetchMovieDetails = async (dispatch, movieId) => {
   try {
     const { access_token, user_id, operator_uid } = user_info.data.data;
 
-    interceptResponse()
+    // interceptResponse()
 
     const movie = await axios.get(
       `https://ott.tvanywhereafrica.com:28182/api/client/v1/${operator_uid}/users/${user_id}/movies/${movieId}`,
@@ -717,7 +717,7 @@ export const fetchPackageMovies = async (movieId, dispatch) => {
   try {
     const { access_token, operator_uid } = user_info.data.data;
 
-    interceptResponse()
+    // interceptResponse()
 
     const packagesMovies = await axios.get(`https://ott.tvanywhereafrica.com:28182/api/client/v1/${operator_uid}/packages`,
       {
@@ -750,7 +750,7 @@ export const fetchSeries = async (dispatch) => {
 
     const { access_token, operator_uid } = user_info.data.data;
 
-    interceptResponse()
+    // interceptResponse()
 
     const series = await axios.get(`https://ott.tvanywhereafrica.com:28182/api/client/v1/${operator_uid}/series`,
       {
@@ -774,7 +774,7 @@ export const search = async (dispatch, keyword) => {
     const { access_token, operator_uid, user_id } = user_info.data.data;
     const formattedString = keyword.replace(/[^\w\s]/gi, '');
 
-    interceptResponse()
+    // interceptResponse()
 
     const packageIds = [];
 
@@ -829,7 +829,7 @@ export const returnMovieDetails = async (movieId) => {
   try {
     const { access_token, operator_uid, user_id } = user_info.data.data;
 
-    interceptResponse()
+    // interceptResponse()
 
     const movie = await axios.get(
       `https://ott.tvanywhereafrica.com:28182/api/client/v1/${operator_uid}/users/${user_id}/movies/${movieId}`,
@@ -888,7 +888,7 @@ export const returnMovieOrSeriesDetails = async (id, type) => {
   try {
     const { access_token, operator_uid, user_id } = user_info.data.data;
 
-    interceptResponse()
+    // interceptResponse()
 
     let url
 
@@ -917,7 +917,7 @@ export const returnOneSeries = async (seriesId) => {
   try {
     const { access_token, operator_uid } = user_info.data.data
 
-    interceptResponse()
+    // interceptResponse()
 
     let req = await axios.get(
       `https://ott.tvanywhereafrica.com:28182/api/client/v1/${operator_uid}/series/${seriesId}`,
@@ -1017,7 +1017,7 @@ export const fetchWatchlist = (dispatch) => {
 
     const { user_id, operator_uid, access_token } = user_info.data.data
 
-    interceptResponse()
+    // interceptResponse()
 
     var config = {
       method: 'get',
@@ -1048,7 +1048,7 @@ export const getLengthWatched = async (id, _type) => {
 
     const { user_id, operator_uid, access_token } = user_info.data.data
 
-    interceptResponse()
+    // interceptResponse()
 
     let url
 
@@ -1081,7 +1081,7 @@ export const updateWatchlist = async (id, _type, lengthWatchedInMs = 0) => {
 
     const { user_id, operator_uid, access_token } = user_info.data.data
 
-    interceptResponse()
+    // interceptResponse()
 
     let url
     const bookmarkName = id
@@ -1114,7 +1114,7 @@ export const removeWatchlist = async (id, _type) => {
 
     const { user_id, operator_uid, access_token } = user_info.data.data
 
-    interceptResponse()
+    // interceptResponse()
 
     await axios.delete(`https://ott.tvanywhereafrica.com:28182/api/client/v1/${operator_uid}/users/${user_id}/bookmarks/movies/${id}`,
       {
@@ -1167,7 +1167,7 @@ export const fetchBannerContent = async (type) => {
     const afriPremiereBanners = []
     const afriplayLiveBanners = []
 
-    interceptResponse()
+    // interceptResponse()
 
     const response = await axios.get(
       `https://ott.tvanywhereafrica.com:28182/api/client/v1/${operator_uid}/banners?translation=en&accessKey=WkVjNWNscFhORDBLCg==`,

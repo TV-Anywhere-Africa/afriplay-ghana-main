@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from "./GLOBAL/pages/landing";
 import SignUpPage from "./GLOBAL/pages/signUpPage";
@@ -18,9 +18,29 @@ import LiveTV from "./GLOBAL/pages/livetv";
 import PayPerView from "./GLOBAL/pages/payperview";
 import Search from "./GLOBAL/pages/search";
 import SelectNetwork from "./GLOBAL/pages/auth/selectNetwork";
+import interceptResponse from "./utils/interceptResponse";
+import { processLog } from "./GLOBAL/logger";
+import { refresh_token } from "./GLOBAL/constants/refreshToken";
 import "./_global.scss";
 
+
+
 function App() {
+  useEffect(() => {
+
+    // window.location.href = window.location.href;
+    // interceptResponse()
+
+    const intervalTimer = setInterval(() => {
+      refresh_token()
+    }, 1.2e+6)
+    // }, 10000)
+
+    return () => {
+      clearInterval(intervalTimer)
+    }
+  }, [])
+
   return (
     <BrowserRouter>
       <Routes>

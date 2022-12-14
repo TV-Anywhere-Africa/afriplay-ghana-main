@@ -42,7 +42,7 @@ const SignUpPage = () => {
   // and it ll load when the user visits page or refreshes page with useEffect beneath this
   useEffect(() => {
     setDeviceInCookies()
-    checkUserAllowed()
+    // checkUserAllowed()
     window.scrollTo(0, 0)
   }, [])
 

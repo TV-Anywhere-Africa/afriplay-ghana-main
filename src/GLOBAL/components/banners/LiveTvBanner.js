@@ -1,29 +1,53 @@
 import { useState, useEffect } from 'react'
-import { fetchBannerContent } from '../../redux/fetchMoviesApi'
+import { fetchBannerContent, fetchEpisodeInfo } from '../../redux/fetchMoviesApi'
 import Button from '../../components/buttons/Button'
 import '../../components/styles/banners/dynamicBanner.scss'
 import dynamicBannerSliderSettings from "../../../utils/sliderConfig/dynamicBannerSliderSettings"
 import Slider from "react-slick"
 import SliderItem from "./SliderItem"
+import { useSelector } from "react-redux"
+import { fetchChannelInfo } from "../../redux/channels"
 
 const LiveTVBanner = () => {
     const [bannerContent, setBannerContent] = useState({})
 
     useEffect(() => {
-        const initFetchBannerContent = async () => {
-            const bannerContent = await fetchBannerContent()
-            console.warn(bannerContent)
-            setBannerContent(bannerContent)
+        const getBannerInfo = async () => {
+            setBannerContent(await fetchChannelInfo("testchannel"))
         }
 
-        initFetchBannerContent()
+        getBannerInfo()
     }, [])
+
+    // useEffect(() => {
+    //     const initFetchBannerContent = async () => {
+    // const bannerContent = await fetchBannerContent()
+    // console.warn(bannerContent)
+    // setBannerContent(bannerContent)
+    //     }
+
+    //     initFetchBannerContent()
+    // }, [])
 
     return (
         <section>
             <div className="hero">
                 <div className="hero-container">
                     {
+                        bannerContent
+                            ? <div className="hero-content-wrapper">
+                                <div className="hero-content">
+                                    <p className="primary-text">{bannerContent.type}</p>
+                                    <h1>{bannerContent.short_name}</h1>
+                                    <p className="hero-content-description">{bannerContent.description}</p>
+                                    <br />
+                                    <Button page={`/watch/live/${bannerContent.uid}`} label='WATCH LIVE' />
+                                </div>
+                            </div>
+                            : <></>
+                    }
+
+                    {/*dont delete {
                         bannerContent
                             ? <div className="hero-content-wrapper">
                                 <div className="hero-content">
@@ -35,9 +59,9 @@ const LiveTVBanner = () => {
                                 </div>
                             </div>
                             : <></>
-                    }
+                    } */}
 
-                    {/* <div className='hero-slider-container'>
+                    {/* dont delete <div className='hero-slider-container'>
                         <Slider {...dynamicBannerSliderSettings} className='hero-slider-main'> */}
                     {/* {afriPlaylive.map((movie) => {
                                 return <SliderItem
@@ -51,11 +75,19 @@ const LiveTVBanner = () => {
                     </div> */}
                 </div>
                 {
-                    bannerContent && bannerContent.preview_image_id ?
+                    bannerContent && bannerContent.image_stores ?
                         <div className='hero-player-container'>
-                            <img src={`https://ott.tvanywhereafrica.com:28182/api/client/v1/global/images/${bannerContent.preview_image_id}?accessKey=WkVjNWNscFhORDBLCg==`} alt={bannerContent.title} className='dynamic-landing-banner' />
+                            <img src={`https://ott.tvanywhereafrica.com:28182/api/client/v1/global/images/${bannerContent.image_stores[0].id}?accessKey=WkVjNWNscFhORDBLCg==`} alt={bannerContent.short_name} className='dynamic-landing-banner' />
                         </div>
                         : <></>
+                }
+
+                { //!dont delete
+                    // bannerContent && bannerContent.preview_image_id ?
+                    //     <div className='hero-player-container'>
+                    //         <img src={`https://ott.tvanywhereafrica.com:28182/api/client/v1/global/images/${bannerContent.preview_image_id}?accessKey=WkVjNWNscFhORDBLCg==`} alt={bannerContent.title} className='dynamic-landing-banner' />
+                    //     </div>
+                    //     : <></>
                 }
                 <div className="hero-gradient livetv-gradient" />
             </div>

@@ -1,5 +1,6 @@
 import axios from "axios";
 import Cookies from "universal-cookie";
+import { processLog } from "../logger";
 const cookies = new Cookies();
 
 export const refresh_token = async () => {
@@ -10,5 +11,7 @@ export const refresh_token = async () => {
     }
   );
   cookies.set("user_info", refresh_token_result, { path: "/" });
-  window.location.reload();
+  processLog("new token generated", refresh_token_result)
+  // window.location.reload();
+  // window.location.href = window.location.href;
 };

@@ -20,7 +20,6 @@ const SliderWrapper = ({ title, children, isTopTen }) => {
                     {children}
                 </div>
             </section>
-
         </>
     )
 }

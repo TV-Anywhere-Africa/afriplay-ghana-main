@@ -26,17 +26,9 @@ const ReelWrapper = (props) => {
     const { movies, type, title } = props
     const { packageNameToId } = useSelector(state => state.fetchMovies)
     const { activeGenreTab } = useSelector(state => state.genreTab)
-    // const [categoryId, setCategoryId] = useState(0)
     const [series, setSeries] = useState([])
     const [filteredMoviesOnly, setFilteredMoviesOnly] = useState([])
-    // const filteredSeries = useMemo(() => _filterSeries(movies), [movies])
     const [genreSeries, setGenreSeries] = useState([])
-
-    // console.warn('activeGenreTab', activeGenreTab)
-
-
-
-
     const [moviesOnly, setMoviesOnly] = useState([])
     const [seriesOnly, setSeriesOnly] = useState([])
     const [activeGenreId, setActiveGenreId] = useState(0)
